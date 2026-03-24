@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --safari-deep: #1B2F1E;
-            --safari-green: #2D4A32;
-            --safari-gold: #C9A84C;
-            --safari-warm: #D4A843;
-            --safari-cream: #FAF6F0;
-            --safari-sand: #F0E8DA;
-            --safari-earth: #8B7355;
-            --safari-text: #2A2A2A;
-            --safari-muted: #6B6356;
+            --arp-orange: #EF5F34;
+            --arp-orange-light: #F47B56;
+            --arp-dark: #1A1A1A;
+            --arp-charcoal: #2A2A2A;
+            --arp-cream: #FAFAFA;
+            --arp-light: #F5F3F0;
+            --arp-text: #2A2A2A;
+            --arp-muted: #6B6B6B;
+            --arp-border: rgba(0,0,0,0.06);
             --bbd-orange: #FF6B35;
             --bbd-dark: #1A1A2E;
             --white: #FFFFFF;
@@ -27,8 +27,8 @@
 
         body {
             font-family: 'Outfit', sans-serif;
-            color: var(--safari-text);
-            background: var(--safari-cream);
+            color: var(--arp-text);
+            background: var(--white);
             overflow-x: hidden;
         }
 
@@ -49,38 +49,17 @@
             align-items: center;
             padding: 20px 40px;
             background: var(--white);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid var(--arp-border);
         }
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .header-left img {
-            height: 32px;
-        }
-        .header-divider {
-            width: 1px;
-            height: 24px;
-            background: rgba(0,0,0,0.15);
-        }
-        .header-siloy {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--safari-muted);
-        }
-        .header-right {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
-            font-style: italic;
-            color: var(--safari-earth);
-        }
+        .header-left { display: flex; align-items: center; gap: 12px; }
+        .header-left img { height: 32px; }
+        .header-divider { width: 1px; height: 24px; background: rgba(0,0,0,0.15); }
+        .header-siloy { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--arp-muted); }
+        .header-right { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic; color: var(--arp-muted); }
 
         /* ── HERO ── */
         .hero {
-            background: linear-gradient(145deg, var(--safari-deep) 0%, #243D28 40%, var(--safari-green) 100%);
+            background: var(--arp-dark);
             padding: 100px 40px 90px;
             text-align: center;
             position: relative;
@@ -91,184 +70,81 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background:
-                radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 80%, rgba(239,95,52,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(239,95,52,0.05) 0%, transparent 50%);
             pointer-events: none;
         }
-        .hero-label {
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--safari-gold);
-            margin-bottom: 24px;
-        }
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.4rem, 5vw, 3.6rem);
-            font-weight: 600;
-            color: var(--white);
-            line-height: 1.2;
-            max-width: 780px;
-            margin: 0 auto 24px;
-        }
-        .hero h1 em {
-            color: var(--safari-gold);
-            font-style: italic;
-        }
-        .hero .subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.7);
-            max-width: 560px;
-            margin: 0 auto 32px;
-            line-height: 1.6;
-        }
-        .hero .prepared-for {
-            font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.5);
-            letter-spacing: 1px;
-        }
-        .hero .prepared-for strong {
-            color: rgba(255,255,255,0.8);
-            font-weight: 500;
-        }
-        .hero .siloy-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
-            font-style: italic;
-            color: rgba(255,255,255,0.35);
-            margin-top: 48px;
-        }
+        .hero-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--arp-orange); margin-bottom: 24px; }
+        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; color: var(--white); line-height: 1.2; max-width: 780px; margin: 0 auto 24px; }
+        .hero h1 em { color: var(--arp-orange); font-style: italic; }
+        .hero .subtitle { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 32px; line-height: 1.6; }
+        .hero .prepared-for { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 1px; }
+        .hero .prepared-for strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+        .hero .siloy-tagline { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic; color: rgba(255,255,255,0.35); margin-top: 48px; }
 
-        /* ── CONTENT CONTAINER ── */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
+        /* ── CONTAINER ── */
+        .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+        .section-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--arp-orange); margin-bottom: 16px; }
 
-        /* ── THE CLIENT ── */
-        .section-client {
-            padding: 80px 40px;
-        }
-        .section-label {
+        /* ── CLIENT ── */
+        .section-client { padding: 80px 40px; }
+        .client-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; line-height: 1.7; color: var(--arp-text); max-width: 760px; }
+        .client-text strong { font-weight: 600; color: var(--arp-charcoal); }
+
+        /* ── ICON STYLE ── */
+        .card-icon {
+            width: 40px; height: 40px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px; font-size: 18px; font-weight: 700;
+            color: var(--arp-orange); background: rgba(239,95,52,0.08);
             font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--safari-gold);
-            margin-bottom: 16px;
         }
-        .client-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 1.7;
-            color: var(--safari-text);
-            max-width: 760px;
-        }
-        .client-text strong {
-            font-weight: 600;
-            color: var(--safari-green);
-        }
+        .card-icon-dark { background: rgba(239,95,52,0.12); color: var(--arp-orange); }
+
+        /* ── CARDS ── */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+        .card { background: var(--white); border-radius: 12px; padding: 28px 24px; border: 1px solid var(--arp-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .card h3 { font-size: 15px; font-weight: 600; color: var(--arp-charcoal); margin-bottom: 8px; }
+        .card p { font-size: 14px; font-weight: 300; color: var(--arp-muted); line-height: 1.5; }
 
         /* ── CHALLENGE ── */
-        .section-challenge {
-            padding: 80px 40px;
-            background: var(--safari-sand);
-        }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 32px;
-        }
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 28px 24px;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        }
-        .card-icon {
-            font-size: 28px;
-            margin-bottom: 14px;
-            display: block;
-        }
-        .card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--safari-deep);
-            margin-bottom: 8px;
-        }
-        .card p {
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--safari-muted);
-            line-height: 1.5;
-        }
+        .section-challenge { padding: 80px 40px; background: var(--arp-light); }
 
         /* ── OUTCOMES (dark) ── */
-        .section-outcomes {
-            padding: 80px 40px;
-            background: var(--safari-deep);
-        }
-        .section-outcomes .section-label {
-            color: var(--safari-gold);
-        }
-        .section-outcomes .cards-grid .card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(201,168,76,0.12);
-        }
-        .section-outcomes .card h3 {
-            color: var(--white);
-        }
-        .section-outcomes .card p {
-            color: rgba(255,255,255,0.6);
-        }
-        .section-outcomes .card:hover {
-            background: rgba(255,255,255,0.09);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-        }
+        .section-outcomes { padding: 80px 40px; background: var(--arp-dark); }
+        .section-outcomes .section-label { color: var(--arp-orange); }
+        .section-outcomes .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(239,95,52,0.12); }
+        .section-outcomes .card h3 { color: var(--white); }
+        .section-outcomes .card p { color: rgba(255,255,255,0.6); }
+        .section-outcomes .card:hover { background: rgba(255,255,255,0.09); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
 
-        /* ── PHASE I ── */
-        .section-phase {
-            padding: 80px 40px;
+        /* ── PHASE I TIMELINE ── */
+        .section-phase { padding: 80px 40px; }
+        .phase-intro { font-size: 15px; font-weight: 300; color: var(--arp-muted); margin-top: 8px; margin-bottom: 48px; line-height: 1.6; }
+
+        .timeline { position: relative; padding-left: 0; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--arp-orange), rgba(239,95,52,0.15));
         }
-        .phase-intro {
-            font-size: 15px;
-            font-weight: 300;
-            color: var(--safari-muted);
-            margin-top: 8px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-        .phase-steps {
+        .timeline-item {
             display: flex;
-            flex-direction: column;
             gap: 24px;
+            margin-bottom: 40px;
+            position: relative;
         }
-        .phase-step {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        .step-number {
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
             flex-shrink: 0;
             width: 48px;
             height: 48px;
-            background: var(--safari-green);
+            background: var(--arp-orange);
             color: var(--white);
             border-radius: 50%;
             display: flex;
@@ -277,275 +153,159 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 20px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 0 6px var(--white);
         }
-        .step-content h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            border: 1px solid var(--arp-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            position: relative;
+            transition: box-shadow 0.3s ease;
+        }
+        .timeline-content:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 16px;
+            width: 14px;
+            height: 14px;
+            background: var(--white);
+            border-left: 1px solid var(--arp-border);
+            border-bottom: 1px solid var(--arp-border);
+            transform: rotate(45deg);
+        }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .timeline-content h3 { font-size: 16px; font-weight: 600; color: var(--arp-charcoal); }
+        .timeline-badge {
+            font-size: 11px;
             font-weight: 600;
-            color: var(--safari-deep);
-            margin-bottom: 4px;
-        }
-        .step-timing {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--safari-gold);
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            color: var(--white);
+            background: var(--arp-orange);
+            padding: 4px 12px;
+            border-radius: 20px;
         }
-        .step-bullets {
-            list-style: none;
-            padding: 0;
+        .timeline-bullets { list-style: none; padding: 0; }
+        .timeline-bullets li {
+            font-size: 14px; font-weight: 300; color: var(--arp-muted);
+            padding: 4px 0 4px 16px; position: relative;
         }
-        .step-bullets li {
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--safari-muted);
-            padding: 3px 0;
-            padding-left: 16px;
-            position: relative;
-        }
-        .step-bullets li::before {
-            content: '–';
-            position: absolute;
-            left: 0;
-            color: var(--safari-gold);
-        }
+        .timeline-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--arp-orange); }
+
         .phase-total {
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            font-size: 14px;
+            margin-top: 40px;
+            padding: 20px 28px;
+            background: var(--arp-light);
+            border-radius: 12px;
+            font-size: 15px;
             font-weight: 500;
-            color: var(--safari-earth);
+            color: var(--arp-charcoal);
+            text-align: center;
+            border-left: 4px solid var(--arp-orange);
         }
 
-        /* ── PHASE II (cards) ── */
-        .section-phase2 {
-            padding: 0 40px 80px;
-        }
-        .phase2-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 32px;
-        }
-        .phase2-card {
-            background: var(--safari-sand);
+        /* ── Week visualisation bar ── */
+        .week-bar-container {
+            margin-top: 48px;
+            padding: 28px;
+            background: var(--arp-light);
             border-radius: 12px;
-            padding: 28px 24px;
-            border: 1px solid rgba(0,0,0,0.04);
         }
-        .phase2-card .card-icon { font-size: 24px; margin-bottom: 12px; }
-        .phase2-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
+        .week-bar-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--arp-muted); margin-bottom: 16px; }
+        .week-bar {
+            display: flex;
+            gap: 3px;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .week-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
             font-weight: 600;
-            color: var(--safari-deep);
-            margin-bottom: 6px;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+            position: relative;
         }
-        .phase2-card p {
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--safari-muted);
-            line-height: 1.5;
+        .week-segment:hover { opacity: 0.85; }
+        .ws-1 { flex: 2; background: #EF5F34; }
+        .ws-2 { flex: 3; background: #D94E28; }
+        .ws-3 { flex: 2; background: #C4421F; }
+        .ws-4 { flex: 2; background: #333; }
+        .ws-5 { flex: 1; background: #555; }
+        .week-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 12px;
         }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--arp-muted); }
+        .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+        /* ── PHASE II ── */
+        .section-phase2 { padding: 0 40px 80px; }
+        .phase2-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+        .phase2-card { background: var(--arp-light); border-radius: 12px; padding: 28px 24px; border: 1px solid var(--arp-border); }
+        .phase2-card .card-icon { margin-bottom: 12px; }
+        .phase2-card h3 { font-size: 15px; font-weight: 600; color: var(--arp-charcoal); margin-bottom: 6px; }
+        .phase2-card p { font-size: 14px; font-weight: 300; color: var(--arp-muted); line-height: 1.5; }
 
         /* ── WHY BBD BOOM ── */
-        .section-bbd {
-            padding: 80px 40px;
-            background: var(--bbd-dark);
-        }
-        .section-bbd .section-label {
-            color: var(--bbd-orange);
-        }
-        .cred-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 32px;
-        }
-        .cred-card {
-            background: rgba(255,107,53,0.06);
-            border: 1px solid rgba(255,107,53,0.12);
-            border-radius: 12px;
-            padding: 24px;
-        }
-        .cred-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--bbd-orange);
-            margin-bottom: 6px;
-        }
-        .cred-card p {
-            font-size: 14px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.5;
-        }
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,107,53,0.15);
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--bbd-orange);
-        }
-        .stat-label {
-            font-size: 12px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.5);
-            margin-top: 4px;
-            letter-spacing: 0.5px;
-        }
+        .section-bbd { padding: 80px 40px; background: var(--bbd-dark); }
+        .section-bbd .section-label { color: var(--bbd-orange); }
+        .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+        .cred-card { background: rgba(255,107,53,0.06); border: 1px solid rgba(255,107,53,0.12); border-radius: 12px; padding: 24px; }
+        .cred-card h3 { font-size: 15px; font-weight: 600; color: var(--bbd-orange); margin-bottom: 6px; }
+        .cred-card p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,107,53,0.15); }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: var(--bbd-orange); }
+        .stat-label { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.5px; }
 
         /* ── RELEVANT EXPERIENCE ── */
-        .section-experience {
-            padding: 80px 40px;
-        }
-        .exp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
-        }
-        .exp-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px 20px;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
-        }
-        .exp-card:hover {
-            transform: translateY(-2px);
-        }
-        .exp-tag {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--safari-earth);
-            margin-bottom: 8px;
-            display: block;
-        }
-        .exp-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--safari-deep);
-            margin-bottom: 4px;
-        }
-        .exp-card p {
-            font-size: 13px;
-            font-weight: 300;
-            color: var(--safari-muted);
-            line-height: 1.4;
-        }
+        .section-experience { padding: 80px 40px; }
+        .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+        .exp-card { background: var(--white); border-radius: 12px; padding: 24px 20px; border: 1px solid var(--arp-border); transition: transform 0.3s ease; }
+        .exp-card:hover { transform: translateY(-2px); }
+        .exp-tag { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--arp-muted); margin-bottom: 8px; display: block; }
+        .exp-card h3 { font-size: 15px; font-weight: 600; color: var(--arp-charcoal); margin-bottom: 4px; }
+        .exp-card p { font-size: 13px; font-weight: 300; color: var(--arp-muted); line-height: 1.4; }
 
         /* ── SILOY BAR ── */
-        .siloy-bar {
-            padding: 32px 40px;
-            background: var(--safari-sand);
-            text-align: center;
-        }
-        .siloy-bar .label {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--safari-earth);
-            margin-bottom: 12px;
-        }
-        .siloy-partners {
-            font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: var(--safari-muted);
-            line-height: 1.8;
-        }
-        .siloy-partners strong {
-            color: var(--safari-deep);
-            font-weight: 600;
-        }
+        .siloy-bar { padding: 32px 40px; background: var(--arp-light); text-align: center; }
+        .siloy-bar .label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--arp-muted); margin-bottom: 12px; }
+        .siloy-partners { font-size: 13px; font-weight: 400; color: var(--arp-muted); line-height: 1.8; }
+        .siloy-partners strong { color: var(--arp-charcoal); font-weight: 600; }
 
-        /* ── NEXT STEPS (dark) ── */
-        .section-next {
-            padding: 80px 40px;
-            background: var(--safari-deep);
-            text-align: center;
-        }
-        .section-next .section-label {
-            color: var(--safari-gold);
-        }
-        .next-checklist {
-            list-style: none;
-            padding: 0;
-            max-width: 480px;
-            margin: 32px auto;
-            text-align: left;
-        }
-        .next-checklist li {
-            font-size: 15px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.75);
-            padding: 10px 0;
-            padding-left: 28px;
-            position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .next-checklist li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--safari-gold);
-            font-weight: 600;
-        }
-        .cta-button {
-            display: inline-block;
-            margin-top: 32px;
-            padding: 16px 40px;
-            background: var(--safari-gold);
-            color: var(--safari-deep);
-            font-family: 'Outfit', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background: var(--safari-warm);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(201,168,76,0.3);
-        }
+        /* ── NEXT STEPS ── */
+        .section-next { padding: 80px 40px; background: var(--arp-dark); text-align: center; }
+        .section-next .section-label { color: var(--arp-orange); }
+        .next-checklist { list-style: none; padding: 0; max-width: 480px; margin: 32px auto; text-align: left; }
+        .next-checklist li { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.75); padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .next-checklist li::before { content: ''; position: absolute; left: 2px; top: 15px; width: 12px; height: 6px; border-left: 2px solid var(--arp-orange); border-bottom: 2px solid var(--arp-orange); transform: rotate(-45deg); }
+        .cta-button { display: inline-block; margin-top: 32px; padding: 16px 40px; background: var(--arp-orange); color: var(--white); font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; }
+        .cta-button:hover { background: var(--arp-orange-light); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(239,95,52,0.3); }
 
         /* ── FOOTER ── */
-        .site-footer {
-            padding: 28px 40px;
-            background: #111;
-            text-align: center;
-        }
-        .footer-text {
-            font-size: 12px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.35);
-        }
-        .footer-text a {
-            color: var(--bbd-orange);
-            text-decoration: none;
-        }
+        .site-footer { padding: 28px 40px; background: #111; text-align: center; }
+        .footer-text { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.35); }
+        .footer-text a { color: var(--bbd-orange); text-decoration: none; }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
@@ -557,7 +317,10 @@
             .section-experience, .section-next { padding-left: 20px; padding-right: 20px; }
             .cards-grid, .cred-grid, .exp-grid, .phase2-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: repeat(2, 1fr); }
-            .phase-step { flex-direction: column; }
+            .timeline::before { left: 23px; }
+            .timeline-content::before { display: none; }
+            .week-bar { height: 32px; }
+            .week-segment { font-size: 8px; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
@@ -606,27 +369,27 @@
             </div>
             <div class="cards-grid">
                 <div class="card fade-in">
-                    <span class="card-icon">🔍</span>
+                    <div class="card-icon">01</div>
                     <h3>Repeat Customers Are Invisible</h3>
                     <p>No way to identify when the same traveller books through different agents or returns for a second safari.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">📋</span>
+                    <div class="card-icon">02</div>
                     <h3>Complaints Can't Be Traced</h3>
                     <p>Issues arrive via agent, head office, or on-site — with no link between them and no pattern visibility.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">📊</span>
+                    <div class="card-icon">03</div>
                     <h3>Driver Performance Is a Blind Spot</h3>
                     <p>Six complaints about the same driver? Right now, nobody would know.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">📁</span>
+                    <div class="card-icon">04</div>
                     <h3>Everything Lives in Spreadsheets</h3>
                     <p>Three entities, three sets of spreadsheets, no connected view of agents, customers, or suppliers.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">🔗</span>
+                    <div class="card-icon">05</div>
                     <h3>Bookings Don't Link Together</h3>
                     <p>Safari and beach extensions are booked separately — no connected customer journey across the group.</p>
                 </div>
@@ -642,27 +405,27 @@
             </div>
             <div class="cards-grid">
                 <div class="card fade-in">
-                    <span class="card-icon">🌍</span>
+                    <div class="card-icon card-icon-dark">01</div>
                     <h3>One CRM for Three Entities</h3>
                     <p>Agents, end-customers, and suppliers managed in a single system across Harrow, Kenya, and Tanzania.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">🎫</span>
+                    <div class="card-icon card-icon-dark">02</div>
                     <h3>Centralised Complaint Tracking</h3>
                     <p>Every complaint — whether from agent, head office, or on-location — linked to one customer record.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">📈</span>
+                    <div class="card-icon card-icon-dark">03</div>
                     <h3>Operational Performance Reporting</h3>
                     <p>Spot patterns in driver complaints, service issues, and agent satisfaction with real data.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">🤝</span>
+                    <div class="card-icon card-icon-dark">04</div>
                     <h3>Agent Intelligence at a Glance</h3>
                     <p>See which agents book Kenya, Tanzania, or both — and their repeat customer behaviour.</p>
                 </div>
                 <div class="card fade-in">
-                    <span class="card-icon">✈️</span>
+                    <div class="card-icon card-icon-dark">05</div>
                     <h3>Connected Customer Journeys</h3>
                     <p>A complete view of every traveller — where they've been, what they booked, and how they rated it.</p>
                 </div>
@@ -670,20 +433,43 @@
         </div>
     </section>
 
-    <!-- PHASE I -->
+    <!-- PHASE I — VISUAL TIMELINE -->
     <section class="section-phase">
         <div class="container">
             <div class="fade-in">
                 <div class="section-label">Phase I — Foundation Build</div>
                 <p class="phase-intro">Sales Hub + Service Hub implementation tailored to ARP Africa's B2B travel agent model, with custom objects and properties to differentiate Pollman's and Ranger Safaris data.</p>
             </div>
-            <div class="phase-steps">
-                <div class="phase-step fade-in">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Discovery & Architecture</h3>
-                        <div class="step-timing">Weeks 1–2</div>
-                        <ul class="step-bullets">
+
+            <!-- Week overview bar -->
+            <div class="week-bar-container fade-in">
+                <div class="week-bar-label">9-Week Implementation Roadmap</div>
+                <div class="week-bar">
+                    <div class="week-segment ws-1">Wk 1–2</div>
+                    <div class="week-segment ws-2">Wk 3–5</div>
+                    <div class="week-segment ws-3">Wk 5–7</div>
+                    <div class="week-segment ws-4">Wk 7–8</div>
+                    <div class="week-segment ws-5">Wk 8–9</div>
+                </div>
+                <div class="week-legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#EF5F34"></div>Discovery</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#D94E28"></div>CRM Build</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#C4421F"></div>Service Hub</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#333"></div>Reporting</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#555"></div>Go-Live</div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline" style="margin-top: 48px;">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Discovery & Architecture</h3>
+                            <span class="timeline-badge">Weeks 1–2</span>
+                        </div>
+                        <ul class="timeline-bullets">
                             <li>Data model design for agents, customers, suppliers</li>
                             <li>Brand segmentation architecture (Kenya / Tanzania)</li>
                             <li>Integration requirements mapping</li>
@@ -691,12 +477,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="phase-step fade-in">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>CRM & Sales Hub Build</h3>
-                        <div class="step-timing">Weeks 3–5</div>
-                        <ul class="step-bullets">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>CRM & Sales Hub Build</h3>
+                            <span class="timeline-badge">Weeks 3–5</span>
+                        </div>
+                        <ul class="timeline-bullets">
                             <li>Agent management pipeline</li>
                             <li>End-customer records with booking history</li>
                             <li>Supplier relationship management</li>
@@ -704,12 +492,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="phase-step fade-in">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Service Hub — Complaint Management</h3>
-                        <div class="step-timing">Weeks 5–7</div>
-                        <ul class="step-bullets">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Service Hub — Complaint Management</h3>
+                            <span class="timeline-badge">Weeks 5–7</span>
+                        </div>
+                        <ul class="timeline-bullets">
                             <li>Multi-channel complaint ticketing pipeline</li>
                             <li>Linked complaints across agent and on-site routes</li>
                             <li>Driver / staff performance tracking</li>
@@ -717,12 +507,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="phase-step fade-in">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Reporting & Dashboards</h3>
-                        <div class="step-timing">Weeks 7–8</div>
-                        <ul class="step-bullets">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Reporting & Dashboards</h3>
+                            <span class="timeline-badge">Weeks 7–8</span>
+                        </div>
+                        <ul class="timeline-bullets">
                             <li>Agent performance and booking reports</li>
                             <li>Complaint trend analysis dashboards</li>
                             <li>Kenya vs Tanzania brand comparison</li>
@@ -730,12 +522,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="phase-step fade-in">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Training & Go-Live</h3>
-                        <div class="step-timing">Weeks 8–9</div>
-                        <ul class="step-bullets">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Training & Go-Live</h3>
+                            <span class="timeline-badge">Weeks 8–9</span>
+                        </div>
+                        <ul class="timeline-bullets">
                             <li>Harrow team onboarding sessions</li>
                             <li>Kenya and Tanzania remote training</li>
                             <li>Admin and power user enablement</li>
@@ -744,6 +538,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="phase-total fade-in">Estimated duration: 8–9 weeks from kickoff</div>
         </div>
     </section>
@@ -756,17 +551,17 @@
             </div>
             <div class="phase2-grid">
                 <div class="phase2-card fade-in">
-                    <span class="card-icon">🔄</span>
+                    <div class="card-icon">i</div>
                     <h3>Booking System Integration</h3>
                     <p>Connect HubSpot to the new booking platform for automated data sync and real-time availability.</p>
                 </div>
                 <div class="phase2-card fade-in">
-                    <span class="card-icon">📣</span>
+                    <div class="card-icon">ii</div>
                     <h3>Agent Marketing & Nurture</h3>
                     <p>Targeted communications to travel agents based on booking behaviour and destination preferences.</p>
                 </div>
                 <div class="phase2-card fade-in">
-                    <span class="card-icon">🤖</span>
+                    <div class="card-icon">iii</div>
                     <h3>AI-Powered Service</h3>
                     <p>Automated complaint classification, sentiment analysis, and predictive service insights.</p>
                 </div>
@@ -774,7 +569,7 @@
         </div>
     </section>
 
-    <!-- WHY BBD BOOM -->
+    <!-- WHY BBD BOOM (back in original position) -->
     <section class="section-bbd">
         <div class="container">
             <div class="fade-in">
@@ -783,7 +578,7 @@
             <div class="cred-grid">
                 <div class="cred-card fade-in">
                     <h3>HubSpot Elite Partner</h3>
-                    <p>10+ years. 2,000+ implementations. The highest tier in the HubSpot ecosystem.</p>
+                    <p>10+ years. 1,000+ implementations. The highest tier in the HubSpot ecosystem.</p>
                 </div>
                 <div class="cred-card fade-in">
                     <h3>Travel & Tourism Specialists</h3>
@@ -808,7 +603,7 @@
             </div>
             <div class="stats-bar fade-in">
                 <div class="stat-item">
-                    <div class="stat-number">225+</div>
+                    <div class="stat-number">20</div>
                     <div class="stat-label">HubSpot Professionals</div>
                 </div>
                 <div class="stat-item">
@@ -816,11 +611,11 @@
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2,000+</div>
+                    <div class="stat-number">1,000+</div>
                     <div class="stat-label">Implementations</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1,500+</div>
+                    <div class="stat-number">100+</div>
                     <div class="stat-label">Certifications</div>
                 </div>
             </div>
@@ -855,24 +650,24 @@
                     <p>Specialist adventure operator — HubSpot for sales, marketing and service.</p>
                 </div>
                 <div class="exp-card fade-in">
-                    <span class="exp-tag">Corporate Travel</span>
-                    <h3>Clarity</h3>
-                    <p>Corporate travel management — CRM implementation for complex B2B workflows.</p>
-                </div>
-                <div class="exp-card fade-in">
                     <span class="exp-tag">Holiday Parks</span>
                     <h3>Southwest Holiday Parks</h3>
                     <p>Multi-site hospitality operator — CRM, booking integration and reporting.</p>
                 </div>
                 <div class="exp-card fade-in">
-                    <span class="exp-tag">Hospitality</span>
-                    <h3>F1 Arcade</h3>
-                    <p>Multi-venue experience brand — Sales Hub, marketing and event management.</p>
+                    <span class="exp-tag">Experiential Travel</span>
+                    <h3>Roots and Journeys</h3>
+                    <p>Heritage and cultural travel specialist — CRM and customer journey management.</p>
                 </div>
                 <div class="exp-card fade-in">
-                    <span class="exp-tag">Student Living</span>
-                    <h3>Yugo Students</h3>
-                    <p>Global student housing operator — multi-brand CRM architecture.</p>
+                    <span class="exp-tag">River Cruises</span>
+                    <h3>Steam Dreams</h3>
+                    <p>Luxury steam train and river cruise experiences — sales and marketing automation.</p>
+                </div>
+                <div class="exp-card fade-in">
+                    <span class="exp-tag">Adventure & Expedition</span>
+                    <h3>Fluid Adventures</h3>
+                    <p>Outdoor adventure and expedition operator — HubSpot CRM implementation.</p>
                 </div>
             </div>
         </div>
@@ -893,6 +688,7 @@
                 <div class="section-label">Next Steps</div>
             </div>
             <ul class="next-checklist fade-in">
+                <li>Review this CRM demo overview together</li>
                 <li>CRM demo walkthrough with Anthony and the Sales Director</li>
                 <li>Wider stakeholder presentation if shortlisted</li>
                 <li>Remote sessions with Kenya and Tanzania teams</li>
